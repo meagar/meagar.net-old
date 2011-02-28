@@ -1,0 +1,30 @@
+
+<%= form_for [@project, @file], :html => { :multipart => true } do |f| %>
+	<%= f.error_messages %>
+
+	<p class="description">
+		<%= f.label :description %>
+		<%= f.text_field :description %>
+	<p>
+
+	<p>
+		<%= f.label :attachment %>
+		<%= f.file_field :attachment %>
+	</p>
+
+	<p>
+	<%= f.label :auto_content_type, 'Content Type' %>
+  <%= f.select :auto_content_type,
+    { 'Automatic'   => 'Automatic',
+      'C++ Source'  => 'source/cpp',
+      'ASP Source'  => 'source/asp',
+      'C Source'    => 'source/c',
+      'Ruby Source' => 'source/rb',
+      'Zip Archive' => 'application/zip' } %>
+
+	<p class="action">
+		<%= f.submit %>
+	</p>
+
+<% end %>
+

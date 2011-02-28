@@ -1,0 +1,21 @@
+<%= trail ['Web Design', designs_path], @design.title %>
+
+<div class="design">
+
+  <div style="float:right">
+    <%= thumbnail(@design, @design.address) %>
+  </div>
+
+  <p>
+  <h2><%=h @design.title %></h2>
+  </p>
+
+  <p>
+    <%= link_to @design.address, @design.address %>
+  </p>
+
+  <%= markdown @design.description %>
+
+</div>
+
+<%= back_to designs_path %>

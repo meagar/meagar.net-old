@@ -1,0 +1,72 @@
+
+table {
+  border-collapse:collapse;
+  line-height:1.4;
+  width:92%;
+  color:#000;
+  padding:0; margin:0;
+  border-top:5px solid #fff;
+  border-bottom:5px solid #fff;
+}
+
+table.nums {
+  float:left;
+  font-weight:normal;
+  width:8%;
+  border-right:1px solid #ddd;
+}
+
+th {
+  padding-right:20px;
+  text-align:right;
+  color:#777;
+  font-weight:normal;
+}
+
+table.lines { white-space:pre; }
+th, td { padding:0 10px; }
+tr.odd  { background:#fff; }
+tr.even { background:#f0f0ff; }
+
+div.file {
+  padding-top:15px;
+  clear:both;
+}
+
+a.download {
+  padding:4px 0 0px 26px;
+  background:url("gfx/save.png") center left no-repeat;
+  margin:10px;
+}
+
+h3 {
+  margin:10px;padding:0;
+}
+
+
+/* Syntax hilighting */
+.c { color: #408080; font-style: italic } /* Comment */
+.err { border: 1px solid #FF0000 } /* Error */
+.k { color: #008000; font-weight: bold } /* Keyword */
+.o { color: #666666 } /* Operator */
+.cm { color: #408080; font-style: italic } /* Comment.Multiline */
+.cp { color: #BC7A00 } /* Comment.Preproc */
+.c1 { color: #408080; font-style: italic } /* Comment.Single */
+.cs { color: #408080; font-style: italic } /* Comment.Special */
+.gd { color: #A00000 } /* Generic.Deleted */
+.ge { font-style: italic } /* Generic.Emph */
+.gr { color: #FF0000 } /* Generic.Error */
+.gh { color: #000080; font-weight: bold } /* Generic.Heading */
+.gi { color: #00A000 } /* Generic.Inserted */
+.go { color: #808080 } /* Generic.Output */
+.gp { color: #000080; font-weight: bold } /* Generic.Prompt */
+.gs { font-weight: bold } /* Generic.Strong */
+.gu { color: #800080; font-weight: bold } /* Generic.Subheading */
+.gt { color: #0040D0 } /* Generic.Traceback */
+.kc { color: #008000; font-weight: bold } /* Keyword.Constant */
+.kd { color: #008000; font-weight: bold } /* Keyword.Declaration */
+.kp { color: #008000 } /* Keyword.Pseudo */
+.kr { color: #008000; font-weight: bold } /* Keyword.Reserved */
+.kt { color: #B00040 } /* Keyword.Type */
+.m { color: #666666 } /* Literal.Number */
+.s { color: #B21818 }

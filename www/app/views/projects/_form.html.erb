@@ -1,0 +1,28 @@
+
+<%= form_for @project, :html => { :multipart => true } do |f| %>
+  <%= f.error_messages %>
+	<p class="name">
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</p>
+
+	<p class="brief">
+		<%= f.label :brief %>
+		<%= f.text_field :brief %>
+	</p>
+
+	<p class="description">
+		<%= f.label :description %>
+		<%= f.text_area :description %>
+	</p>
+
+	<p>
+		<%= f.label :icon %>
+		<%= f.file_field :icon %>
+	</p>
+
+	<p class="actions">
+		<%= f.submit %>
+	</p>
+<% end %>
+

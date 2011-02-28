@@ -1,0 +1,45 @@
+<%= controller.nav %>
+
+<div class="welcome">
+  <h2><span>Welcome to meagar.net</span></h2>
+
+  <p>
+  Welcome to my online portfolio.  This site showcases some of my work in the IT
+  field from the past several years, including software I've written (most of it
+  <em>not</em> professionally, as that code remains property of my previous
+  employers) and several websites I've designed.
+  </p>
+
+	<a style="display:block; width:289px; height:121px; margin:0 auto"
+			href="http://www.conquercancer.ca/site/TR?px=2603458&amp;pg=personal&amp;fr_id=1361&amp;s_src=BF_emailbadge2011">
+    <img alt="Progress Meter" src="http://badge.boundlessfundraising.com/en_CA/image/display/cfrccca/1361/2603458" />
+  </a>
+
+</div><!-- .welcome -->
+
+<ul class="updates">
+	<% for u in @updates %>
+		<li class="update">
+			<h3><%= u.subject %></h3>
+			<span class="date">Posted <%= u.created_at.to_s(:short) %></span>
+			<div class="body">
+				<%= markdown(u.body) %>
+			</div><!-- .body -->
+			<%= admin_opts do %>
+				<%= admin_link 'Edit', edit_update_path(u) %>
+				<%= admin_link 'Delete', u, :confirm => 'Are you sure?', :method => :delete %>
+			<% end %>
+
+		</li><!-- Update -->
+	<% end %>
+
+	<% admin_only do %>
+		<%= link_to 'New update', new_update_path %>
+	<% end %>
+
+</ul><!-- .updates -->
+
+<div class="updatenav">
+
+</div>
+

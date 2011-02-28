@@ -1,0 +1,96 @@
+
+/*** Projects ***/
+
+ul.projects {
+	margin:0; padding:0;
+}
+
+li.project {
+	list-style-type:none;
+}
+
+.projects.show img {
+	float:left;
+  padding-right:20px;
+}
+
+.project {
+  padding:10px 10px 20px;
+}
+
+.projects .project { 
+  padding:10px 10px 20px 120px;
+  clear:both;
+  border-bottom:1px solid #ddd;
+  background-repeat:no-repeat;
+  background-position:center left;
+}
+
+.project h3 {
+  margin-top:0;
+}
+
+.files table {
+  margin-top:20px;
+  width:100%;
+  clear:both;
+  border-collapse:collapse;
+	border:1px solid #000;
+}
+
+.files table td.filename a {
+  font-weight:bold;
+}
+
+
+.files td, .files th {
+  border-top:1px solid #000;
+  border-bottom:1px solid #000;
+  padding:1px 3px;
+}
+
+.files th {
+  color:#fff;
+  background:#222;
+}
+
+.files td {
+  background:#333;
+}
+
+.files table tr.even td {
+  background:#2a2a2a;
+}
+
+.files td.save a span { display:none; }
+.files td.save a {
+  display:block;
+  width:24px;
+  height:24px;
+  background:url(gfx/save.png) center no-repeat;
+}
+
+td.description p {
+	margin:0; padding:0;
+}
+
+.files .filename a {
+  padding:5px 0 1px 26px;
+  display:block;
+  background-position:left center;
+  background-repeat:no-repeat;
+}
+
+.files .source-asp      .filename a { background-image:url(gfx/mime/source_asp.png); }
+.files .source-cpp      .filename a { background-image:url(gfx/mime/source_cpp.png); }
+.files .source-c        .filename a { background-image:url(gfx/mime/source_c.png); }
+.files .image-png       .filename a { background-image:url(gfx/mime/image.png); }
+.files .text-plain      .filename a { background-image:url(gfx/mime/txt.png); }
+.files .application-zip .filename a { background-image:url(gfx/mime/zip.png); }
+
+/* mime-types */
+.text {
+
+}
+
+

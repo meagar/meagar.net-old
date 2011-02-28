@@ -1,0 +1,135 @@
+
+/*** Resume ***/
+
+#resume h2 {
+  width:50%;
+  height:49px;
+  background:url("gfx/resume_title.jpg") top left no-repeat;
+  border-bottom:1px solid #fff;
+}
+
+#resume h2 span { display:none; }
+
+#resume {
+  color:#ddd;
+  padding-left:25px;
+}
+
+#resume h3 {
+  margin-top:25px;
+  font-size:150%;
+}
+
+#resume h3, #resume h4, #resume h5 {
+  color:#fff;
+  margin-bottom:4px;
+}
+
+#resume div,
+#resume p {
+  padding-left:25px;
+}
+
+#resume p {
+  margin-top:0;
+}
+
+#resume div.certs {
+  padding:10px;
+  margin:20px;
+  float:right;
+  text-align:center;
+}
+
+#resume div.certs img {
+  border-width:4px 15px;
+	border-style:solid;
+	border-color:#fff;
+}
+
+/*** Contact ***/
+
+.static.contact {
+  position:relative;
+}
+
+.static.contact p {
+  text-align:center;
+  padding-bottom:0;
+  margin-bottom:10px;
+}
+
+.static.contact .email {
+  position:absolute;
+  top:53px;
+  left:95px;
+  padding:0;
+  width:372px;
+  height:290px;
+}
+
+.static.contact .email span { display:none; }
+
+.static.contact .email * {
+  padding:0; margin:0;
+  position:absolute;
+}
+
+.static.contact .email a {
+  left:24px; bottom:0;
+  width:337px;
+  height:107px;
+  background:url("gfx/email_button.jpg");
+}
+
+.static.contact .email h4 {
+  top:0; left:0;
+  background:url("gfx/email_title.jpg");
+  width:372px;
+  height:83px;
+}
+
+.static.contact .email p {
+  left:28px; top:125px;
+  width:334px;
+  height:42px;
+  background:url("gfx/email_request.jpg");
+}
+
+.static.contact .social {
+  float:right;
+}
+
+.static.contact .social a {
+  display:block;
+  width:340px;
+  height:120px;
+  background-position:top left;
+}
+
+.static.contact .facebook { background-image:url("gfx/facebook.jpg"); }
+.static.contact .twitter  { background-image:url("gfx/twitter.jpg");  margin:4px 0; }
+.static.contact .linkedin { background-image:url("gfx/linkedin.jpg"); }
+
+
+.static.contact .im a {
+  display:block;
+  float:left;
+  height:54px;
+  background-position:top left;
+}
+
+.static.contact .icq { background-image:url("gfx/icq.jpg"); width:252px; }
+.static.contact .msn { background-image:url("gfx/msn.jpg"); width:301px; }
+.static.contact .aim { background-image:url("gfx/aim.jpg"); width:302px; }
+
+div.im {
+  clear:both;
+  margin:0 auto;
+  width:855px;
+  padding-top:25px;
+}
+
+.static.contact a:hover, .static.contact a:focus, .static.contact a:active { background-position:-100%; outline:0; }
+.static.contact a span { display:none; }
+

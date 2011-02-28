@@ -1,0 +1,114 @@
+<%= trail 'Resume' %>
+
+<%
+  certs = [
+    [ "http://www.comptia.org/certifications/listed/a.aspx",
+      "CompTIA A+ Certified", "comptia_a"],
+    [ "http://www.comptia.org/certifications/listed/network.aspx",
+      "CompTIA Network+ Certified", "comptia_net" ],
+    [ "http://www.comptia.org/certifications/listed/linux.aspx" ,
+      "CompTIA Linux+ Certified", "comptia_linux" ],
+    [ "http://www.microsoft.com/learning/en/us/certification/cert-benefits.aspx",
+      "Microsoft Certified Professional", "mcp" ],
+    [ "http://www.microsoft.com/learning/en/us/certification/cert-benefits.aspx",
+      "Microsoft Certified Desktop Support Technician", "mcdst" ]
+  ] 
+
+	def section(title, &block)
+		output = "<h4>#{title}</h4><div class=\"#{title.downcase}\">".html_safe
+		output << capture(&block)	
+		output.safe_concat("</div>")
+  end
+
+  def html_list(items)
+    items.collect { |i| "<li>#{i}</li>" } .join('')
+  end
+    
+  def ul(*opts)
+    ("<ul>" + html_list(opts) + "</ul>").html_safe
+  end
+%>
+
+
+<br />
+
+<div id="resume">
+  <h2><span>Matthew Eagar</span></h2>
+
+  <p>I develop software both professionally and as a hobby, and I'm always on the
+  lookout for challenging new roles where I can put my knowledge of computers and
+  technology to good use.
+  </p>
+
+  <p>Below is an abridged version of my resume.  If you think I might be right for
+  your company, please <a href="/contact">contact me</a> to for a copy of my
+  complete resume including work and school history, references and additional
+  contact information.
+  </p>
+
+  <p>(Expect a <%= link_to 'PDF','http://en.wikipedia.org/wiki/Portable_Document_Format' %>
+  unless you specify otherwise)
+  </p>
+
+  <div>
+    <h3>Skills and Experience</h3>
+    <div class="skills">
+      <%= section 'Personal' do %>
+        <p>I am efficient and self-motivated, highly creative and passionate
+        about technology.  I can work effectively both individually and
+        within a group, and I am driven by a constant desire for self-improvement.
+        </p>
+      <% end %>  
+
+      <div class="certs">
+        <% certs.each do |h,a,i| -%>
+          <%= link_to image_tag("/images/resume/#{i}.png", :alt => a, :title => a), h%><br /><br />
+        <% end -%>
+      </div>
+
+      <%= section 'Technical' do %>
+        <h5>Certifications</h5>
+        <%= ul "CompTIA A+ Certified",
+          "CompTIA Network+ Certified",
+          "CompTIA Linux+ Certified",
+          "Microsoft Certified Professional",
+          "Microsoft Certified Desktop Support Technician" %>
+
+        <h5>Programming Languages</h5>
+        <p>C and C++, .Net, Visual Basic, C#, Perl, Ruby Java, COM</p>
+
+        <h5>Web Development</h5>
+        <p>Ruby on Rails, ASP, JSP, J2EE, PHP, XML, HTML, SQL</p>
+
+        <h5>Database Severs</h5>
+        <p>Microsoft SQLServer, MySQL, PostgreSQL</p>
+
+        <h5>Version Control Systems</h5>
+        <p>I have experience with Git and Subversion VCS, both as a developer and a repository maintainer</p>
+
+        <h5>Operating Systems</h5>
+        <p>DOS and Windows 3.x, 9x, XP, many varieties of Linux and Unix.</p>
+
+        <p>Active Directory administration under Windows NT, Server 2000, Server 2003.</p>
+
+        <h5>Networking</h5>
+        <p>FTP and web server administration under Linux, small-scale network setup and maintenance</p>
+      <% end %>
+    </div>
+
+    <h3>Honors and Awards</h3>
+    <div class="honors">
+      <h4>2005 - First Place, IT Programming Challenge</h4>
+      <p>Placed first in Fanshawe College's internal programming contest.</p>
+
+      <h4>2004 - Honorable Mention, ACM Programming Contest</h4>
+        <p>Achieved 39th rank in South Ontario out of 128 competing teams</p>
+
+      <h4>2002 - Honorable Mention, Canadian Computer Competition</h4>
+        <p>Placed within the top 40 of 890 competitors across Ontario</p>
+
+      <h4>1999 - Certificate of Excellence, London Central Secondary School</h4>
+      <p>Achieved 100% in Computer Studies</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+
+table.form {
+	width:100%;
+}
+
+table.form th {
+	text-align:right;
+	width:1%;
+}
+
+table.form td input, 
+table.form td textarea {
+	width:100%;
+}
+
+.admin-opts a {
+  display:block;
+  float:left;
+  width:15px;
+  height:15px;
+  background:#222;
+  padding:1px;
+  margin:0 1px;
+  border:1px solid #000;
+  background:center no-repeat #000
+}
+
+.admin-opts a:hover {
+  background-color:#700;
+}
+
+
+.admin-opts a span {
+  display:none;
+}
+
+.admin-opts a.edit   { background-image:url("gfx/admin/edit.png"); }
+.admin-opts a.delete { background-image:url("gfx/admin/delete.png"); }
+.admin-opts a.top    { background-image:url("gfx/admin/top.png"); }
+.admin-opts a.higher { background-image:url("gfx/admin/higher.png"); }
+.admin-opts a.lower  { background-image:url("gfx/admin/lower.png"); }
+.admin-opts a.bottom { background-image:url("gfx/admin/bottom.png"); }
+
+

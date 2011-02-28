@@ -1,0 +1,34 @@
+<%= trail 'Web Design' %>
+
+<p>
+I've worked as a web designer for more than a decade.  My tools have evolved
+over the years from Microsoft FrontPage in the mid 90's to the open-source,
+Linux environment I use today.
+</p>
+
+<p>
+Below are some of the sites I've worked on, many of which I still maintain
+and several of which I host on my Linux-based web server.
+</p>
+
+<% i = 0 %>
+<table class="designs">
+  <tr>
+  <% for d in @designs %>
+    <td><div class="design"><%= thumbnail(d, design_path(d)) %></div>
+      <%= admin_opts do %>
+        <%= admin_link 'Edit', edit_design_path(d) %>
+				<%= admin_link 'Delete', d, :confirm => 'Are you sure?', :method => :delete %>
+				<%= move_links(d) %>
+      <% end -%>
+    </td>
+    <%= cycle('', '', '</tr><tr>'.html_safe) -%>
+  <% end %>
+  </tr>
+</table>
+
+<%= admin_only do %>
+  <%= link_to 'New design', new_design_path %>
+<% end %>
+
+

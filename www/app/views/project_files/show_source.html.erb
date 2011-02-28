@@ -1,0 +1,39 @@
+<%= trail ['Projects', projects_path], [@file.project.name, project_path(@file.project)], @file.filename %>
+
+<%
+  lineNo = 0
+  f = File.new(@file.path)
+	type = :c
+
+	if @file.url.ends_with? '.asp'
+		type = :asp
+	elsif @file.url.ends_with? '.cpp'
+		type = :cpp
+	end
+
+  lines = hilite_code(type, f.read()).split("\n");
+-%>
+
+<div class="Info">
+  <h3><%= @file.filename %></h3>
+  <%= back_to project_path(@file.project) %>
+  <%= link_to span('Download'), save_project_file_path(@file), :class => 'download' %>
+</div>
+
+
+<div class="file">
+  <table class="nums">
+    <% lines.each do %>
+      <tr class="<%= cycle 'odd', 'even' %>"><th><%= lineNo += 1 %></th></tr>
+    <% end %>
+  </table>
+  <% reset_cycle %>
+
+  <table class="lines">
+    <% lines.each do |line| %>
+      <tr class="<%= cycle 'odd', 'even' %>">
+        <td><%= line.chomp.html_safe %> </td>
+      </tr>
+    <% end %>
+  </table>
+</div>

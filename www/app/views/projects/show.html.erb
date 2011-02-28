@@ -1,0 +1,50 @@
+<%= trail ['Projects', projects_path], @project.name %>
+
+<%= image_tag @project.icon.url %>
+
+<h2><%= @project.name %></h2>
+
+<div class="description">
+	<%= markdown @project.description %>
+</div>
+
+<div class="files">
+	<table>
+		<tr>
+			<%= admin_only do %><th></th><% end %>
+			<th class="filename">Filename</th>
+			<th class="description">Description</th>
+			<th class="createdAt">Uploaded At</th>
+			<th class="size">Size (KB)</th>
+			<th></th>
+		</tr>
+
+		<% for f in @project.files -%>
+			<tr class="<%= cycle 'odd', 'even' %> <%= f.content_type.split('/').join('-') %>">
+				<%= admin_only do -%>
+					<td class="admin-opts">
+						<%= admin_link 'Edit', edit_project_file_path(@project, f) %>
+						<%= admin_link 'Delete', project_file_path(@project, f) %>
+						<%= admin_link 'Top',    move_project_file_path(@project, f, :direction => :to_top) %>
+						<%= admin_link 'Higher', move_project_file_path(@project, f, :direction => :higher) %>
+						<%= admin_link 'Lower',  move_project_file_path(@project, f, :direction => :lower) %>
+						<%= admin_link 'Bottom', move_project_file_path(@project, f, :direction => :to_bottom) %>
+					</td>
+				<% end -%>
+				<td class="filename"><%= link_to f.filename, project_file_path(@project, f) %></td>
+				<td class="description"><%= markdown f.description %></td>
+				<td class="createdAt"><%= f.created_at.to_s(:short) %></td>
+				<td class="size"><%= file_size(f.size) %></td>
+				<td class="save"><%= link_to span(f.filename), save_project_file_path(f), :title => "Download #{f.filename}" %></td>
+			</tr>
+		<% end %>
+
+	</table>
+</div>
+
+<%= admin_only do -%>
+	<%= link_to 'Edit', edit_project_path(@project) -%> |
+	<%= link_to 'Add File', new_project_file_path(@project.id) -%>
+<% end -%>
+
+<%= back_to projects_path -%>

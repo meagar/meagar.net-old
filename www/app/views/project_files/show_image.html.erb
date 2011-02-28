@@ -1,0 +1,6 @@
+<%= trail ['Projects', projects_path], [@attachment.project.name, project_path(@attachment.project)], @attachment.filename %>
+
+<div style="text-align:center">
+  <%= markdown @attachment.description %>
+  <%= image_tag @attachment.public_filename, :class => 'Attachment' %>
+</div>

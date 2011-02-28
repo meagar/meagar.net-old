@@ -1,0 +1,41 @@
+
+/*** Web design ***/
+
+table.designs, table.designs td {
+  padding:0;
+  margin:0;
+  border-collapse:collapse;
+  border:0;
+}
+
+.design {
+  padding:9px;
+}
+
+.design div.thumbnail {
+  padding:10px;
+  background:url(gfx/black_25.png);
+}
+
+.design h3 {
+  text-align:center;
+  font-size:100%;
+  font-weight:bold;
+  color:#ddd;
+  margin:0;
+  padding:0;
+}
+
+.design .thumbnail a.thumbnail {
+  display:block;
+  width:270px;
+  height:200px;
+}
+
+.design .thumbnail a.thumbnail:hover {
+  background-position:-270px 0;
+}
+
+.design .thumbnail a span { display:none; }
+
+

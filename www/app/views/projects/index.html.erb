@@ -1,0 +1,28 @@
+<%= trail 'Projects' %>
+
+<p>
+Below are various projects I've polished to the point where they can be presented online.
+Additional projects will appear here after some additional testing and cleanup.
+</p>
+
+<ul class="projects">
+  <% for p in @projects %>
+    <li class="project" style="background-image:url('<%= p.icon.url %>')">
+      <h3><a href="<%= project_path(p) %>"><%= p.name %></a></h3>
+      <%= markdown p.brief %>
+      <%= p.files.count %> file(s)
+      <%= admin_opts do %>
+        <%= admin_link 'Edit', edit_project_path(p) %>
+        <%= admin_link 'Delete', p, :confirm => 'Are you sure?', :method => :delete %>
+        <%= move_links(p) %>
+      <% end %>
+    </li>
+  <% end %>
+  
+  <%= admin_only do %>
+    <%= link_to 'New project', new_project_path %>
+  <% end %>
+
+</ul><!-- Projects -->
+
+
